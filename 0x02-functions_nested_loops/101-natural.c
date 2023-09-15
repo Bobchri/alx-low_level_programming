@@ -1,33 +1,33 @@
-#include <stdio.h>
+/*
+	 * File: 101-natural.c
+	 * Auth: vincent kip
+	 */
 
 
-/**
-  * main - prints the first 52 fib
-  * Return: 0.
-  */
+	#include <stdio.h>
 
 
-int main(void)
-{
-	int i = 0;
-	long j = 1, k = 2;
-
-
-	while (i < 50)
+	/**
+	 * main - Lists all the natural numbers below 1024 (excluded)
+	 *        that are multiples of 3 or 5.
+	 *
+	 * Return: Always 0.
+	 */
+	int main(void)
 	{
-	if (i == 0)
-	printf("%ld", j);
-	else if (i == 1)
-	printf(", %ld", k);
-	else
-	{
-	k += j;
-	j = k - j;
-	printf(", %ld", k);
+		int i, sum = 0;
+
+
+		for (i = 0; i < 1024; i++)
+		{
+			if ((i % 3) == 0 || (i % 5) == 0)
+				sum += i;
+		}
+
+
+		printf("%d\n", sum);
+
+
+		return (0);
 	}
-	++i;
-	}
-	printf("\n");
-	return (0);
-}
 
