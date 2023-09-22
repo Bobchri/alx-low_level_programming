@@ -1,28 +1,37 @@
 #include "main.h"
 
 /**
- * rev_string - reverse array
- * @n: integer params
- * Return: 0
- */
-
-void rev_string(char *n)
+  * cap_string - The main  function
+  *
+  * @str: Function parameter of the string
+  *
+  * Return: Void.
+  */
+char *cap_string(char *str)
 {
-	int i = 0;
-	int j = 0;
-	char temp;
+	int count = 0;
 
-	while (*(n + i) != '\0')
+	while (str[count])
 	{
-		i++;
+	while (!(str[count] >= 'a' && str[count] <= 'z'))
+		count++;
+	if (str[count - 1] == ' ' ||
+	str[count - 1] == '\t' ||
+	str[count - 1] == '\n' ||
+	str[count - 1] == ',' ||
+	str[count - 1] == ';' ||
+	str[count - 1] == '.' ||
+	str[count - 1] == '!' ||
+	str[count - 1] == '?' ||
+	str[count - 1] == '"' ||
+	str[count - 1] == '(' ||
+	str[count - 1] == ')' ||
+	str[count - 1] == '{' ||
+	str[count - 1] == '}' ||
+	count == 0)
+	str[count] -= 32;
+	count++;
 	}
-	i--;
-
-	for (j = 0; j < i; j++, i--)
-	{
-		temp = *(n + j);
-		*(n + j) = *(n + i);
-		*(n + i) = temp;
-	}
+	return (str);
 }
 
