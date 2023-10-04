@@ -1,24 +1,19 @@
+#include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
+
 /**
- * create_array - create array of size size and assign char c
- * @size: size of array
- * @c: char to assign
- * Description: create array of size size and assign char c
- * Return: pointer to array, NULL if fail
+ * main - print the number of arguments passed to the program
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
+ * Return: Always 0 (Success)
  */
-char *create_array(unsigned int size, char c)
+
+int main(int argc, char *argv[])
 {
-	char *str;
-	unsigned int i;
+(void) argv; /*Ignore argv*/
+	printf("%d\n", argc - 1);
 
-	str = malloc(sizeof(char) * size);
-	if (size == 0 || str == NULL)
-		return (NULL);
-
-	for (i = 0; i < size; i++)
-		str[i] = c;
-	return (str);
+	return (0);
 }
 
